@@ -16,7 +16,7 @@ import java.util.Optional;
 
 public class BioGeneratorScreen extends AbstractContainerScreen<BioGeneratorMenu> {
     private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(ExtremeGenerators.MOD_ID,"textures/gui/coal_generator/bio_generator_gui.png");
+            ResourceLocation.fromNamespaceAndPath(ExtremeGenerators.MOD_ID,"textures/gui/bio_generator/bio_generator_gui.png");
     private static final ResourceLocation LIT_PROGRESS_TEXTURE =
             ResourceLocation.fromNamespaceAndPath("minecraft","container/furnace/lit_progress");
     private EnergyDisplayTooltipArea energyInfoArea;
