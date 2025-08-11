@@ -3,6 +3,7 @@ package de.schrobsy.extremegenerators;
 import com.mojang.logging.LogUtils;
 import de.schrobsy.extremegenerators.block.ModBlocks;
 import de.schrobsy.extremegenerators.block.entity.ModBlockEntities;
+import de.schrobsy.extremegenerators.event.ModBusEvents;
 import de.schrobsy.extremegenerators.item.ModCreativeModeTabs;
 import de.schrobsy.extremegenerators.item.ModItems;
 import de.schrobsy.extremegenerators.screen.ModMenuTypes;
@@ -15,6 +16,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.IModBusEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -40,7 +42,8 @@ public class ExtremeGenerators {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
 
         // Register ourselves for server and other game events we are interested in.
@@ -78,9 +81,10 @@ public class ExtremeGenerators {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.BIO_GENERATOR_MENU.get(), BioGeneratorScreen::new);
+        }
     }
-  /*  @SubscribeEvent
-    private void registerScreens(RegisterMenuScreensEvent event) {
-        event.register(ModMenuTypes.BIO_GENERATOR_MENU.get(), BioGeneratorScreen::new);
-    }*/
+
 }
