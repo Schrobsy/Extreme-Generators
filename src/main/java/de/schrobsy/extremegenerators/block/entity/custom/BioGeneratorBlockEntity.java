@@ -3,6 +3,7 @@ package de.schrobsy.extremegenerators.block.entity.custom;
 import de.schrobsy.extremegenerators.block.entity.ModBlockEntities;
 import de.schrobsy.extremegenerators.block.entity.energy.ModEnergyStorage;
 import de.schrobsy.extremegenerators.block.entity.energy.ModEnergyUtil;
+import de.schrobsy.extremegenerators.item.ModItems;
 import de.schrobsy.extremegenerators.screen.custom.BioGeneratorMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -135,7 +136,7 @@ public class BioGeneratorBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasFuelItemInSlot() {
-        return this.itemHandler.getStackInSlot(INPUT_SLOT).is(Items.COAL);
+        return this.itemHandler.getStackInSlot(INPUT_SLOT).is(ModItems.BIO_MASS);
     }
 
     private boolean isBurningFuel() {

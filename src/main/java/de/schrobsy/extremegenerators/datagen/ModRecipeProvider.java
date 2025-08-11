@@ -1,9 +1,13 @@
 package de.schrobsy.extremegenerators.datagen;
 
+import de.schrobsy.extremegenerators.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -42,6 +46,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(recipeOutput, BISMUTH_SMELTABLES, RecipeCategory.MISC, ModItems.BISMUTH.get(), 0.25f, 200, "bismuth");
         oreBlasting(recipeOutput, BISMUTH_SMELTABLES, RecipeCategory.MISC, ModItems.BISMUTH.get(), 0.25f, 100, "bismuth");
 */
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BIO_MASS.get(), 8)
+                .requires(Items.DIRT, 2).requires(Items.OAK_LEAVES, 2)
+                .unlockedBy("has_bio_mass", has(ModItems.BIO_MASS)).save(recipeOutput);
+
 
     }
 }

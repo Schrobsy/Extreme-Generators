@@ -1,4 +1,5 @@
 {
-  "itemGroup.extremegenerators_items": "Extreme Generators",
-  "block.extremegenerators.bio_generator": "Bio Generator"
+  "itemGroup.extremegenerators": "Extreme Generators",
+  "block.extremegenerators.bio_generator": "Bio Generator",
+  "item.extremegenerators.bio_mass": "Bio Mass"
 }

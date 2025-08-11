@@ -42,6 +42,7 @@ public class ExtremeGenerators {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
 
