@@ -147,6 +147,7 @@ dependencies {
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     implementation "curse.maven:mekanism-268560:6486993"
     implementation "curse.maven:kotlinforforge-351264:6706911"
+    implementation "curse.maven:mekanism-generators-268566:6486996"
 
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
